@@ -181,6 +181,23 @@ a {
     text-decoration: none;
 }
 
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #0E0010;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0E0010;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+
 .home {
     height: 100vh;
     background-image: url('../img/bg-home.png');
@@ -230,8 +247,8 @@ a {
 }
 
 .main__heading {
-    margin-top: 150px;
-    margin-bottom: 65px;
+    margin-top: 100px;
+    margin-bottom: 130px;
     display: flex;
     justify-content: space-between;
 }
@@ -260,6 +277,18 @@ a {
     z-index: -1;
 }
 
+.heading__first::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -183px;
+    width: 122px;
+    height: 367px;
+    background-image: url('../img/rocket.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .heading__second::before {
     content: '';
     position: absolute;
@@ -280,4 +309,49 @@ a {
     border-radius: 15px;
     outline: none;
     border: none;
+    font-family: Oxanium;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #0E0010;
+}
+
+.home__elonvision {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.home__elonvision-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.home__elonvision img {
+    margin-top: -35px;
+}
+
+.home__elonvision p {
+    max-width: 805px;
+    font-family: Sigmar One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 39px;
+    text-align: center;
+    color: #FFE9F5;
+}
+
+.home__elonvision p span {
+    color: rgba(188, 81, 204, 1);
+}
+
+.total__supply {
+    background: linear-gradient(180deg, #223988 0%, #41277F 0.01%, #220944 100%);
+    height: 384px;
+    margin-top: 31px;
 }
