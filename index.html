@@ -10,20 +10,24 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
-
+<body class="body">
     <section class="home">
         <div class="container">
             <div class="home__inner">
                 <header>
-                    <nav class="header__menu">
-                        <ul>
-                            <li><a href="#!">Tokenomics</a></li>
-                            <li><a href="#!">Roadmap</a></li>
-                            <li><a href="#!">How to Buy</a></li>
-                            <li><a href="#!">Partners</a></li>
-                            <li><a href="#!">Social</a></li>
+                    <nav class="header__menu navbar">
+                        <ul class="nav-menu">
+                            <li class="nav-item"><a class="nav-link" href="#!">Tokenomics</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Roadmap</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">How to Buy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Partners</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Social</a></li>
                         </ul>
+                        <div class="hamburger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
                     </nav>
                 </header>
                 <div class="main__heading">
@@ -88,11 +92,12 @@
                         <p>we have burned 50% of our supply to the dead address.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
     <section class="roadmap">
+        <img class="rcrystal-roadmap__first" src="./img/red-crystal1.png">
+        <img class="rcrystal-roadmap__second" src="./img/red-crystal2.png">
         <div class="roadmap__inner">
             <h3>Roadmap</h3>
             <img class="elon-roadmap" src="./img/elon-roadmap.png">
@@ -147,7 +152,14 @@
             <img class="elon-rocket" src="./img/roadmap-rocket.png">
         </div>
         <img class="elon-roadmap__big" src="./img/roadmap-elon.png">
+        <img class="telescope" src="./img/telescope.png">
+        <img class="red-planet" src="./img/planet2.png">
+        <img class="roadmap-crystal__first" src="./img/roadmap-crystal1.png">
+        <img class="roadmap-crystal__second" src="./img/roadmap-crystal2.png">
+        <img class="roadmap-crystal__third" src="./img/roadmap-crystal3.png">
+        <img class="roadmap-crystal__forth" src="./img/roadmap-crystal4.png">
     </section>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

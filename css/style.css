@@ -175,6 +175,11 @@ body {
     background-attachment: fixed;
     font-family: 'Oxanium';
     font-style: normal;
+    overflow-x: hidden;
+}
+
+body.locked {
+    overflow-y: hidden;
 }
 
 a {
@@ -203,6 +208,7 @@ a {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 .container {
@@ -242,7 +248,7 @@ a {
     color: rgb(214, 215, 218);
 }
 
-.header__menu ul li {
+.header__menu ul li:not(:last-child) {
     margin-right: 68px;
 }
 
@@ -277,17 +283,16 @@ a {
     z-index: -1;
 }
 
-.heading__first::after {
+.home::after {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -183px;
+    top: 11%;
+    left: 45.5%;
     width: 122px;
     height: 367px;
     background-image: url('../img/rocket.png');
     background-size: contain;
     background-repeat: no-repeat;
-    padding-top: 15px;
     animation: bounce 5s infinite;
 }
 
@@ -393,6 +398,10 @@ a {
 }
 
 .total__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     z-index: 3;
     position: absolute;
     top: 46px;
@@ -482,6 +491,7 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 3;
 }
 
 .burning::after {
@@ -610,6 +620,55 @@ img.elon-roadmap__big {
     position: absolute;
     bottom: 37%;
     left: 10%;
+}
+
+img.rcrystal-roadmap__first {
+    position: absolute;
+    top: 0;
+    left: 100px;
+}
+
+img.rcrystal-roadmap__second {
+    position: absolute;
+    bottom: 148px;
+    left: 11em;
+}
+
+img.roadmap-crystal__first {
+    position: absolute;
+    right: 39em;
+    top: 6em;
+}
+
+img.roadmap-crystal__second {
+    position: absolute;
+    right: 118px;
+    top: 20em;
+}
+
+img.roadmap-crystal__third {
+    position: absolute;
+    bottom: 40px;
+    right: 150px;
+}
+
+img.roadmap-crystal__forth {
+    position: absolute;
+    bottom: 125px;
+    left: 40em;
+}
+
+img.red-planet {
+    position: absolute;
+    bottom: 92px;
+    right: 196px;
+}
+
+img.telescope {
+    position: absolute;
+    right: 150px;
+    bottom: 516px;
+    z-index: 2;
 }
 
 .timeline {
@@ -771,7 +830,6 @@ ul.timeline li:nth-child(odd):not(:first-child) {
 }
 
 ul.timeline li:nth-child(odd) {
-    /* margin-left: 30em; */
     align-self: flex-end;
 }
 
@@ -784,6 +842,302 @@ ul.timeline-right p {
     line-height: 22px;
     color: #FFFFFF;
 }
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #b9b3b3;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1700px) {
+    .heading__second::before {
+        top: -31px;
+        left: -130px;
+        width: 114%;
+        height: 218%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .heading__first::before {
+        top: -8px;
+        left: 120px;
+        width: 100%;
+        height: 137%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .main__heading span {
+        font-size: 115px;
+    }
+
+    .home::after {
+        left: 44%;
+    }
+
+    .total__supply::after {
+        width: 300px;
+        height: 308px;
+        left: 2%;
+    }
+
+    .total__crystals {
+        right: 55px;
+    }
+
+    .burning-block::after {
+        right: -11%;
+        bottom: -15%;
+        width: 237px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .burning::after {
+        right: 1%;
+    }
+
+    .burning::before {
+        left: 1%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .home::after {
+        width: 80px;
+        height: 250px;
+        top: 13%;
+        left: 45%;
+    }
+
+    .main__heading span {
+        font-size: 100px;
+    }
+
+    .total__supply::after,
+    .total__crystals {
+        display: none;
+    }
+
+    .total__inner h3 {
+        font-size: 30px;
+    }
+
+    .burning::after,
+    .burning::before,
+    .burning-block::after {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .main__heading {
+        display: flex;
+        justify-content: center;
+    }
+
+    .heading__first {
+        margin-right: 170px;
+    }
+
+    .heading__before {
+        margin-right: 80px;
+    }
+
+    .main__heading span {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 880px) {
+    .main__heading span {
+        font-size: 60px;
+    }
+
+    .heading__second::before {
+        top: -17px;
+    }
+
+    .header__menu ul li:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: #220944;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 10;
+        overflow: auto;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        z-index: 11;
+    }
+
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 700px) {
+    .main__heading span {
+        font-size: 40px;
+    }
+
+    .home::after {
+        width: 50px;
+        left: 46.5%;
+        height: 170px;
+        top: 12%;
+    }
+
+    .main__heading {
+        margin-top: 50px;
+    }
+
+    .home__elonvision-btn {
+        flex-direction: column;
+    }
+
+    .home__elonvision img {
+        margin-top: 20px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .buy__btn {
+        font-size: 30px;
+    }
+
+    .home__elonvision p {
+        font-size: 19px;
+    }
+
+    .total__inner h3 {
+        font-size: 22px;
+    }
+
+    .total__supply-block img {
+        position: absolute;
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .total__supply_burn-first,
+    .total__supply_burn-second {
+        line-height: 18px;
+        font-size: 18px;
+        margin-left: 120px;
+    }
+
+    .total__supply_burn-first {
+        margin-left: 100px;
+    }
+
+    .total__inner p {
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 560px) {
+    .heading__first {
+        margin-right: 85px;
+    }
+
+    .main__heading span {
+        font-size: 26px;
+    }
+
+    .home::after {
+        left: 42.5%;
+    }
+
+    .total__supply_burn-second {
+        margin-top: 38px;
+    }
+
+    .total__supply_burn-first,
+    .total__supply_burn-second {
+        font-size: 16px;
+    }
+
+    .total__inner h3 {
+        font-size: 20px;
+    }
+
+    .total__inner p {
+        font-size: 15px;
+    }
+
+    .total__supply-block img {
+        max-width: 305px;
+    }
+
+    .total__supply_burn-first,
+    .total__supply_burn-second {
+        margin-left: 106px;
+    }
+
+    .total__supply_burn-first {
+        margin-left: 80px;
+    }
+
+    .burning-block {
+        padding: 35px 41px;
+    }
+
+    .burning-text p {
+        font-size: 18px;
+    }
+
+}
+
 
 @keyframes bounce {
     0% {
